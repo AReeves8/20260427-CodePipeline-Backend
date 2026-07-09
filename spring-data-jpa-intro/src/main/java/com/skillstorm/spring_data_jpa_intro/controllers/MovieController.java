@@ -4,6 +4,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.skillstorm.spring_data_jpa_intro.models.Director;
+import com.skillstorm.spring_data_jpa_intro.models.Genre;
 import com.skillstorm.spring_data_jpa_intro.models.Movie;
 import com.skillstorm.spring_data_jpa_intro.services.MovieService;
 
@@ -50,6 +52,9 @@ public class MovieController {
         if(movies == null) {
             return ResponseEntity.notFound().build();
         }
+        
+        // CodePipeline check to see if deployment works
+        movies.add(new Movie(900, "Captain America: Winter Soldier", 10, Genre.ACTION, new Director(900, "Russo", "Brothers")));
         return new ResponseEntity<>(movies, HttpStatus.OK);
     }
 
