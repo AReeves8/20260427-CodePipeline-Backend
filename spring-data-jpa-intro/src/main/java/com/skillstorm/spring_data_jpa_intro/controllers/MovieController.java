@@ -54,7 +54,7 @@ public class MovieController {
         }
         
         // CodePipeline check to see if deployment works
-        movies.add(new Movie(900, "Captain America: Winter Soldier", 10, Genre.ACTION, new Director(900, "Russo", "Brothers")));
+        movies.add(new Movie(900, "Panic Room", 10, Genre.HORROR, new Director(900, "David", "Fincher")));
         return new ResponseEntity<>(movies, HttpStatus.OK);
     }
 
